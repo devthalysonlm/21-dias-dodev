@@ -1,0 +1,18 @@
+let condicao = true
+
+
+do {
+    
+    let nome = prompt('Informe o seu nome:')
+    let idade = prompt('Infome sua idade:')
+    let peso = Number(prompt('Informe o seu peso:'))
+    let altura = Number(prompt('Informe a sua altura:'))
+    console.log(`Nome: ${nome}, Idade: ${idade}`)
+    console.log(`Seu IMC é ${peso / (altura * altura)}`)
+    let opcao = prompt('Deseja inseir novas informações?')
+    if(opcao == 's'){
+        condicao = true
+    } else {
+        condicao = false
+    }
+} while (condicao );

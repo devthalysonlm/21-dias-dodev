@@ -1,0 +1,71 @@
+let nomes = [];
+let senhas = [];
+let contador = 0;
+
+let continuar = true
+
+while(continuar){
+    let opcao = prompt('Cadastro: 1 / Login: 2 / Excluir Login: 3 / Encerrar: 4 ')
+
+     switch (opcao) {
+        case '1':
+            nomes[contador] = prompt('Informe o nome:')
+            senhas[contador] = prompt('Informe a senha:')
+            contador++
+            break;
+        case'2':
+            let nome = prompt('Login:')
+            let senha = prompt('Senha:')
+            loginValido = false
+        for(let i = 0; i < nomes.length; i++){
+            if(nomes[i] == nome && senhas[i] == senha){
+                loginValido = true
+            } 
+        }
+        if(loginValido){
+            alert('Login Efetuado com sucesso...')
+        }else{
+            alert('Login Inválido! Tente novamente...')
+        }
+        break;
+        case '3': 
+        // Criar uma nova solicatação ao uauário
+            let deletarUsuario = prompt('Infome o usuário a ser excluído:')
+        //criar um novo array auxiliar vazio para nome
+            let nomesAux = []
+        //Criar um novo array auxiliar vazio para senha
+            let senhaAux = []
+        //Criar um contador auxiliar 
+            let contadorAux = 0
+        //Criar uma nova varredura so que agora em vez usar os nomes use o contador 
+        for(let i = 0; i <  contador; i++){
+        //Veja se o nome que vc solicitou para excluir se encontra em nomes na contagem    
+            if(deletarUsuario == nomes[i]){
+                alert('Usuário excluído com sucesso')
+         //Se não o nome auxiliar dentro do contador auxiliar será o mesmo que o nome dentro da contagem        
+            }else{
+                nomesAux[contadorAux] = nomes[i]
+            //A senha auxiliar dentro do contador auxiliar será o mesmo que a senha denntro da contagem
+                senhaAux[contadorAux] = senhas[i]
+             //contador auxiliar fará a contagem    
+                contadorAux++
+            }
+        }
+            //O primeiro array de nome será igual ao array auxiliar
+            nomes = nomesAux
+            //O primeiro array de senha será igual ao array auxiliar
+            senhas = senhaAux
+            //O contador vai tirár o espaço  vazio
+            contador--
+            break;       
+        case '4':
+            if(opcao == '4'){
+                continuar = false
+            }
+            break;
+        default:
+            break;
+     }
+}   
+
+

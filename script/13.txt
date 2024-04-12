@@ -1,0 +1,43 @@
+
+class Carro{
+    marca
+    ano
+    cor
+    kilometragem
+    constructor(marca,ano,cor,kilometragem){
+        this.marca = marca
+        this.ano = ano
+        this.cor = cor
+        this.kilometragem = kilometragem
+    }
+    apresentacao(){
+        console.log(`Marca:${this.marca}\nAno:${this.ano}\nCor:${this.cor}\nKilometragem:${this.kilometragem}`)
+    }
+}
+
+let continuar = true
+let carros = [];
+let contador = 0;
+
+console.log('=====PRIME VEÍCULOS=====')
+
+while(continuar){
+    let marca = prompt('Marca:')
+    let ano = parseInt(prompt('Ano:'))
+    let cor = prompt('cor:')
+    let kilometragem = Number(prompt('Kilometragem:'))
+    let carro = new Carro(marca,ano,cor,kilometragem)
+    carros[contador] = carro
+
+
+    let desejaContinuar = prompt('Digite 1 caso queira cadastrar outro carro:')
+    if(desejaContinuar != '1'){
+        continuar = false
+        continue;
+    } else{
+        contador++
+    }
+
+}
+
+

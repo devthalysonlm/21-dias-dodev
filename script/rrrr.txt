@@ -1,0 +1,77 @@
+const numeros = [];
+const indices = [];
+let contadorIndice = 0;
+posicaoArray = 0;
+
+
+const numeroProcurado = parseInt(prompt('Digite um número a ser procurado:'))
+
+while(posicaoArray <  5 ){
+    const numeroIserido = parseInt(prompt('Insira um número inteiro positivo:'))
+    numeros[posicaoArray] = numeroIserido
+
+    
+    if(numeros[posicaoArray] ===  numeroProcurado ){
+        indices[contadorIndice] = posicaoArray
+        contadorIndice++
+    }
+
+    posicaoArray++;
+    
+}
+console.log(`O numero ${numeroProcurado} foi encontrado nos indices: ${indices}`)
+
+/*
+
+CORREÇÕES A SE FAZER
+
+1 > Não precisa mostrar posiçãoarray somente o numero a ser procurado no indice correspondente. 
+
+2 > Array com comente 10 posições
+
+
+
+
+
+
+
+const array = [];
+const indices = [];
+let contadorIndice = 0;
+
+const numeroProcurado = parseInt(prompt('Digite o número a ser procurado:'));
+
+for (let i = 0; i < 10; i++){
+    const elemento = parseInt(prompt(`Digite o elemento ${i + 1}`))
+    array[i] = elemento
+}
+
+for (let i = 0; i < 10; i++){
+    if(array[i] === numeroProcurado ){
+        indices[contadorIndice] = i
+        contadorIndice++
+    }
+}
+
+console.log(`O numero ${numeroProcurado} foi encontrado nos indices: ${indices}`)
+
+
+let numeros = [];
+posicaoArray = 0;
+continuar = true;
+
+while(continuar === true){
+    let numeroIserido = Number(prompt('Insira um número inteiro positivo:'))
+    numeros[posicaoArray] = numeroIserido
+
+    let inserirMaisNumeros = prompt('Digite 1 caso queira inserir mais algum número:')
+    if(inserirMaisNumeros != 1){
+        continuar = false;
+        continue;
+    }
+
+    posicaoArray++;
+    console.log(`Posição: ${posicaoArray} - ${numeroIserido}`)
+}
+
+*/
