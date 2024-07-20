@@ -4,3 +4,5 @@ Objeto seria algo completo.
 
 
 */
+
+console.log("Olá,Mundo!")
