@@ -9,7 +9,7 @@ Objeto seria algo completo.
 */
 
 //CRIANDO UMA CLASSE
-class carro {
+class Carro {
     Modelo
     Marca
     cor
@@ -22,4 +22,4 @@ class carro {
 
 //TIRANDO A CLASSE DO ABSTRATO E TRANFORMANDO EM ALGO CONCRETO
 //CRIANDO UM OBJETO:
-let carro = new carro('fiesta','for','prata')
+let carro = new Carro('fiesta','for','prata')
