@@ -18,8 +18,9 @@ class Carro {
         this.marca = marca
         this.cor = cor
     }
+    
 }
 
 //TIRANDO A CLASSE DO ABSTRATO E TRANFORMANDO EM ALGO CONCRETO
 //CRIANDO UM OBJETO:
-let carro = new Carro('fiesta','for','prata')
+let carro = new Carro('fiesta','ford','prata')
