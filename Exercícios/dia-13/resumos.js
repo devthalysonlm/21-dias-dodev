@@ -24,3 +24,30 @@ class Carro {
 //TIRANDO A CLASSE DO ABSTRATO E TRANFORMANDO EM ALGO CONCRETO
 //CRIANDO UM OBJETO:
 let carro = new Carro('fiesta','ford','prata')
+
+
+
+/*
+
+OUTRO EXEMPLO DO USO DE CLASSES
+
+class Retangulo {
+    constructor(largura=0, altura=0){
+        this.largura = largura
+        this.altura = altura
+    }
+    calcularArea(){
+        return this.largura * this.altura
+    }
+
+    calcularPerimetro(){
+        return 2 * (this.largura + this.altura)
+    }
+}
+
+
+let retanguloUm = new Retangulo(5,3 );
+console.log(retanguloUm.calcularArea());
+
+Acessando o objeto 
+*/
