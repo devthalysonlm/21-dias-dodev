@@ -50,4 +50,5 @@ let retanguloUm = new Retangulo(5,3 );
 console.log(retanguloUm.calcularArea());
 
 Acessando o objeto 
+console.log('retanguloUm.largura') Saída:5 
 */

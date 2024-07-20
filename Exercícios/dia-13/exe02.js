@@ -17,10 +17,6 @@ class Carro {
     }
 }
 
-let carro1 = new Carro('Sportage', 180, 192, 9)
-
-console.log(carro1.tempo(100));
-console.log(carro1.apresentacao());
 
 class Corrida {
     nome
@@ -32,8 +28,11 @@ class Corrida {
         this.nome = nome
         this.tipo = tipo
         this.distancia = distancia
-        this.participantes = participantes
-        this.vencedor = vencedor
+        this.participantes = []
+        this.vencedor = ''
 
     }
+
 }
+
+let corrida1 = new Corrida('Interlagos', 'Fórmula1', 7000, )
