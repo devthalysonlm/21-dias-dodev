@@ -10,6 +10,7 @@ function perguntarColaborador(){
 
 //CALCULANDO O AUMENTO
 
+function calcularAumento(){
     let porcentagem = 0
     if(salario <= 1500){
         porcentagem = 20
