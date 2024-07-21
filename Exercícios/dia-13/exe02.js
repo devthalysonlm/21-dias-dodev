@@ -47,15 +47,15 @@ class Corrida {
     
     }
     exibirVencedor(){
-        alert`O vencedor é ${this.vencedor.nome}`
+        alert(`O vencedor é ${this.vencedor.nome}`)
     }
 }
 
-let corrida = new Corrida('Interlagos', 'Fórmula1', 7000, )
+let corrida = new Corrida('Interlagos', 'Fórmula1', 7000)
 
-corrida.participantes[0] = new Carro('Kia Sporatge', 180, 192)
-corrida.participantes[1] = new Carro('Palio Fire', 75, 157)
-corrida.participantes[2] = new Carro('Posche Carreira',650, 330 )
+corrida.participantes[0] = new Carro('Kia Sporatge', 180, 192, 9)
+corrida.participantes[1] = new Carro('Palio Fire', 75, 157, 15)
+corrida.participantes[2] = new Carro('Posche Carrera',650, 330,3)
 
 corrida.definirVencedor()
 corrida.exibirVencedor()
