@@ -19,7 +19,8 @@ function cadastrarLogin(){
 //FUNCAO DE LOGIN
 
 function efetuarLogin(nome, senha){
-    if(nomes.includes(nome) && senhas.includes(senha)){
+    let index = nomes.indexOf(nome)
+    if(index !== -1  && senhas[index] == senha){
         return true
     } else {
         return false
@@ -31,7 +32,7 @@ function efetuarLogin(nome, senha){
 
 function excluirCadastro(nome){
     let indice = nomes.indexOf(nome);
-    if(nomes == -1){
+    if(indice !== -1){
         nomes.splice(indice,1)
         senhas.splice(indice,1)
         console.log('Cadastro Excluído com sucesso!')
@@ -42,28 +43,35 @@ function excluirCadastro(nome){
 
 let continuar = true;
 while (continuar){
-    let opcao = escolherOpcao()
+    let opcao = escolherOpcao();
+
     switch(opcao){
         case '1':
             cadastrarLogin()
-            alert('Cadastro efetuado com sucesso!')
-        break;
+         break;
         case '2':
-            
             let nome = prompt('Informe o seu usuário:')
             let senha = prompt('Informe sua senha:') 
             let login = efetuarLogin(nome,senha)
             if(login){
-                alert('logado com sucesso!')
+                console.log('logado com sucesso!')
             } else {
-                alert('Usuário ou senha incorretos!')
+                console.log('Usuário ou senha incorretos!')
             }
-        break;
+         break;
+        case '3':
+            let nome = prompt('informe o seu nome:')
+            excluirCadastro(nome)
+         break;
         case '4':
             continuar = false;
-        break;
+         break;
+        default;
+            console.log('Opção inválida. Tente novamente!')
+         break;
     }
 
     
 }
+
 
