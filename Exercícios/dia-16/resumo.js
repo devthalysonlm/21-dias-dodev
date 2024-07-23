@@ -28,17 +28,18 @@ console.log(arrayNumeros.splice(1,1))
 console.log(arrayNumeros)
 /*Nesse caso eu eu informo a posição do número que quero excluir e a quantidade de vezes.
 Nesse caso o núemro excluído foi o 2 que estava na posição 1. 
-*/
+
 
 
 
 //RESUMO PARTE 02
 
-let arrayNumeros = [1,3,4,2]
-console.log(arrayNumeros)
-
-
-console.log(arrayNumeros.forEach(numero => console.log(numero)))
-/*Ordem ascendente, permite execurtar um código específico para cada elemente do array. 
+forEach e filter foram treinados separadamente.
 
 */
+
+let arrayNumeros = [4,3,2,1,5]
+
+console.log(arrayNumeros.sort())
+
+//Organiza o array de maneira crescente.
