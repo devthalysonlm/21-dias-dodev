@@ -13,7 +13,7 @@ function escolherOpcao(){
 
 function cadastrarLogin(){
     nomes.push(prompt('Informe o seu nome:'))
-    senhas.push(parseInt(prompt('Informe a sua senha:')))
+    senhas.push(prompt('Informe a sua senha:'))
 }
 
 //FUNCAO DE LOGIN
