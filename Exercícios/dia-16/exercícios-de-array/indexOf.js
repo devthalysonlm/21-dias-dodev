@@ -3,7 +3,7 @@ A função indexOf em JavaScript é utilizado para encontrar um elemento especí
 O comportamento dessa função é percorrer todo array e retornar o índice do primeiro elemento encontrado que corresponde ao valor específicado. Se o valor não for encontrado ele retorna '-1'. Se o elemento aparecer mais de uma vez apenas o indice da primeira é retornado.
 
 */
-/*
+
 //ECONTRAR UM NÚMERO
 let numeros = [10,20,30,40,50]
 let index = numeros.indexOf(20)
@@ -53,7 +53,7 @@ console.log(buscarLetras)
 //Retorno de -1 por inexistência
 
 
-
+/*
     Você está desenvolvendo um sistema de busca simples para um catálogo de livros. Cada livro tem um título e você precisa encontrar a posição de um título no catálogo. Você quer garantir que sua busca não seja sensível a maiúsculas e minúsculas.
 
 Tarefa
@@ -64,7 +64,7 @@ Se o título for encontrado, exiba a posição (índice) do livro no array. Caso
 Dicas
 Lembre-se de normalizar tanto o título de busca quanto os títulos no array para minúsculas (ou maiúsculas) para fazer a comparação.
 
-
+*/
 
 let livros = ['Crónicas de Nárina','a baleia Azul','Código Limpo','melhor Comer melhor Pensar','pai rico pai pobre']
 let livro = 'código limpo'
@@ -120,6 +120,37 @@ adicionarParticipante('thalyson')
 
 console.log(participantes)
 
-*/
 
 
+
+//JOGANDO O ESSE CONHECIMENTO EM UMA INTERAÇÃO COM USUÁRIO.
+
+let participantes = [];
+let nome
+function adicionarParticipante(){
+    nome = prompt('Informe o seu nome:')
+    cadastrarNome(nome)
+}
+
+function cadastrarNome(nome){
+    let normalizarNome = nome.toLowerCase()
+
+    let indice = participantes.findIndex(lista => lista.toLowerCase() === normalizarNome)
+    if(indice === -1){
+        participantes.push(nome)
+        alert(`Nome ${nome} cadastrado com sucesso!`)
+    } else {
+        alert(`${nome}  já existe na lista de participantes!`)
+    }
+    let continuar = prompt('Digite 1 para continuar a cadastrar participante ou 2 para encerrar:')
+        if(continuar == 1){
+            adicionarParticipante()
+        } else{
+            console.log('Programa encerrado!')
+        }
+   
+}
+
+
+adicionarParticipante()
+console.log(participantes)
