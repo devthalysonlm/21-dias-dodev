@@ -2,8 +2,8 @@
 A função indexOf em JavaScript é utilizado para encontrar um elemento específico dentro de um array
 O comportamento dessa função é percorrer todo array e retornar o índice do primeiro elemento encontrado que corresponde ao valor específicado. Se o valor não for encontrado ele retorna '-1'. Se o elemento aparecer mais de uma vez apenas o indice da primeira é retornado.
 
-Coloca o asterístico com traço aqui ---------------------------------------
-
+*/
+/*
 //ECONTRAR UM NÚMERO
 let numeros = [10,20,30,40,50]
 let index = numeros.indexOf(20)
@@ -51,9 +51,9 @@ let letras = ['a','b','c','d']
 let buscarLetras = letras.indexOf('e')
 console.log(buscarLetras)
 //Retorno de -1 por inexistência
-*/
 
-/*
+
+
     Você está desenvolvendo um sistema de busca simples para um catálogo de livros. Cada livro tem um título e você precisa encontrar a posição de um título no catálogo. Você quer garantir que sua busca não seja sensível a maiúsculas e minúsculas.
 
 Tarefa
@@ -97,7 +97,7 @@ tituloParaBusca = 'CÓDIGO LIMPO'
 buscarLivros(tituloParaBusca)
 
 
-*/
+
 
 
 let participantes = ['Thalyson','Lorena','Douglas','Zilda','Aginor','Luiz Felipe'];
@@ -119,3 +119,7 @@ function adicionarParticipante(adicionarNome){
 adicionarParticipante('thalyson')
 
 console.log(participantes)
+
+*/
+
+
