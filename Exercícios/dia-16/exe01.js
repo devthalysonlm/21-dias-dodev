@@ -50,28 +50,28 @@ while (continuar){
             cadastrarLogin()
          break;
         case '2':
-            let nome = prompt('Informe o seu usuário:')
-            let senha = prompt('Informe sua senha:') 
-            let login = efetuarLogin(nome,senha)
-            if(login){
-                console.log('logado com sucesso!')
-            } else {
-                console.log('Usuário ou senha incorretos!')
-            }
+         let nomeLogin = prompt('Informe o seu usuário:')
+         let senhaLogin = prompt('Informe sua senha:') 
+         let login = efetuarLogin(nomeLogin,senhaLogin)
+         if(login){
+            console.log('logado com sucesso!')
+         } else {
+            console.log('Usuário ou senha incorretos!')
+         }
          break;
         case '3':
-            let nome = prompt('informe o seu nome:')
-            excluirCadastro(nome)
+         let nomeExcluir = prompt('informe o seu nome para exclusão:')
+         excluirCadastro(nomeExcluir)
          break;
         case '4':
             continuar = false;
          break;
-        default;
-            console.log('Opção inválida. Tente novamente!')
+        default:
+         console.log('Opção inválida. Tente novamente!')
          break;
     }
 
     
 }
-.
+
 
