@@ -64,7 +64,7 @@ Se o título for encontrado, exiba a posição (índice) do livro no array. Caso
 Dicas
 Lembre-se de normalizar tanto o título de busca quanto os títulos no array para minúsculas (ou maiúsculas) para fazer a comparação.
 
-*/
+
 
 let livros = ['Crónicas de Nárina','a baleia Azul','Código Limpo','melhor Comer melhor Pensar','pai rico pai pobre']
 let livro = 'código limpo'
@@ -121,7 +121,7 @@ adicionarParticipante('thalyson')
 console.log(participantes)
 
 
-
+*/
 
 //JOGANDO O ESSE CONHECIMENTO EM UMA INTERAÇÃO COM USUÁRIO.
 
