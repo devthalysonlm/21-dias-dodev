@@ -4,7 +4,7 @@ class Hoteis{
     Categoria
     Endereco
     Telefone
-    constructor(id, categoria, endereco, telefone){
+    constructor(id, nome, categoria, endereco, telefone){
         this.Id = id
         this.Nome = nome
         this.Categoria = categoria
@@ -29,9 +29,9 @@ class Reservas{
 }
 
 let hoteis = []
-let idHoteis = 0
+let idHotel = 1
 let reservas = []
-let idReservas = 0
+let idReserva = 1
 
 function CadastrarHotel(){
     let nome;
@@ -40,15 +40,19 @@ function CadastrarHotel(){
         if(!nome){
             console.log('O campo nome é obrigatório!')
         }
-        categoria = prompt('Informe a categoria:')
-        if(!categoria){
-            console.log('O campo categoria é obrigatório')
-        }
-        
     } while (!nome);
+    let categoria = prompt('Informe a categoria do hotel:')
+    let endereco = prompt('Informe o endereco do hotel:')
+    let telefone = prompt('Informe o número de telefone:')
+    let hotel = new Hoteis(idHotel, nome, categoria, endereco, telefone)
+    idHotel++
+    hoteis.push(hotel)
+
+    
+
 
 
 }
 
 
-CadastrarHotel()
+
