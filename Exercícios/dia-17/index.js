@@ -47,11 +47,24 @@ function CadastrarHotel(){
     let hotel = new Hoteis(idHotel, nome, categoria, endereco, telefone)
     idHotel++
     hoteis.push(hotel)
-
-    
-
+}
 
 
+function CadastrarReserva(){
+    let idHotel;
+    let existe = false;
+
+    do {
+        idHotel = prompt('Informe o ID do hotel:')
+        for(let i = 0; i < hoteis.length; i++){
+            if(idHotel === hoteis[i].Id){
+                existe = true;
+                break;
+            } else if(i === hoteis.length -1){
+                console.log('ID do hotel não cadastrado')
+            }
+        }
+    } while (!existe);
 }
 
 
