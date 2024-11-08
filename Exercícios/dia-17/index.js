@@ -56,10 +56,10 @@ function CadastrarReserva(){
     do {
         idHotel = parseInt(prompt('Digite o id do hotel:'))
         for(let i = 0; i < hoteis.length; i++){
-            if(idHotel == hoteis[i].Id) {
+            if(idHotel === hoteis[i].Id) {
                 i = hoteis.length
                 existe = true
-            } else if(i == hoteis.length -1){
+            } else if(i === hoteis.length -1){
                 console.log('Id do hotel não cadastrado')
             }
         }
