@@ -1,3 +1,18 @@
+/*
+    Hotel: 
+        Id
+        Nome
+        Categoria
+        Endereco
+        Tefefone
+    Reserva:
+        Id
+        IdHtotel
+        Responsavel
+        Entrada
+        Saida
+*/
+
 class Hoteis{
     Id
     Nome
