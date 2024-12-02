@@ -1,4 +1,4 @@
-alert(`---------Sistemas de Cadastro Dodev---------`)
+
 
 //CRIANDO CLASSES 
 
@@ -56,24 +56,29 @@ function CadastrarHotel(){
     hoteis.push(hotel)
 }
 //CRIANDO FUNÇÃO PARA CADASTRO DE RESERVA
+
 function CadastrarReserva(){
-    let IdHotel = parseInt(prompt('Informe o ID do Hotel:'))
+    let idHotel;
     let existe = false;
-    for(let i = 0; i < hoteis.length; i++){
-        if(idHotel == hoteis[i]){
-            existe = true;
+    do {
+        let idHotel = parseInt(prompt('Informe o ID do Hotel:'))
+        for(let i = 0; i < hoteis.length; i++){
+            if(idHotel == hoteis[i].id){
+                existe = true;
+            }
+            else if(i == hoteis.length - 1){
+                alert('ID de hotel inexistente')
+            }
         }
-        if(i == hoteis[i] - 1){
-            alert('ID de hotel inexistente')
-        }
-    }
+    } while (!existe);
+
     let responsavel = prompt('Informe o nome do responsável pela reserva:')
-    let diaEntrada = parseInt('Informe o dia de check-in:')
+    let diaEntrada = parseInt(prompt('Informe o dia de check-in:'))
     let diaSaida;
     do {
         diaSaida = parseInt(prompt('Informe o dia check-out:'))
         if(diaSaida < diaEntrada){
-            alert(`Saida`)
+            alert(`O dia de check-in deve ser posterior ao check-out!`)
         }
 
     } while (diaSaida < diaEntrada);
@@ -100,7 +105,7 @@ function ConsultarReservaPeloHotel(idHotel){
 //CONSULTANDO HOTEL PELA RESERVA
 function ConsultarHotelPelaReserva(idReserva){
     let idHotel = reservas[idReserva-1].idHotel;
-    console.log(`Hotel:${hoteis[idHotel -1].nome}`)
+    console.log(`Hotel:${hoteis[idHotel -1].responsavel}`)
     console.log(`Endereco: ${hoteis[idHotel -1].endereco}`)
     console.log(`Check-in:${reservas[idReserva -1].diaEntrada}`)
     console.log(`Check-out:${reservas[idReserva -1].diaSaida}`)   
@@ -149,33 +154,33 @@ function AtualizarTelefone(idHotel, telefone){
 
 let continuar = true
 do {
-    let opcoes = parseInt(prompt('----------Bem vindo ao sistema de cadastro de hoteis e reservas Dodev----------\nEscolha a opção que melhor lhe atender:\n1 - Cadastro de hotel\n2 - Cadastro de reserva\n3 - Consulta de reservas pelo hotel\n4 - Consulta de hoteis pela reserva\n5 - Consulta de reservas pelo responsável\n6 - Consulta de hoteis pela categoria\n7 - Atualizar número de telefone\n8 - Encerrar o programa'))
+    let opcoes = parseInt(prompt('Bem vindo ao sistema de cadastro de hoteis e reservas Dodev\nEscolha a opção que melhor lhe atender:\n1 - Cadastro de hotel\n2 - Cadastro de reserva\n3 - Consulta de reservas pelo hotel\n4 - Consulta de hoteis pela reserva\n5 - Consulta de reservas pelo responsável\n6 - Consulta de hoteis pela categoria\n7 - Atualizar número de telefone\n8 - Encerrar o programa'))
     switch(opcoes){
-        case'1':
+        case 1:
             CadastrarHotel();
             break;
-        case'2':
+        case 2:
             CadastrarReserva();
             break;
-        case'3':
+        case 3:
             ConsultarReservaPeloHotel(prompt('Informe o ID do hotel:'))
             break;
-        case'4':
+        case 4:
             ConsultarHotelPelaReserva(prompt('Informe o ID da reserva:'))
             break;
-        case'5':
+        case 5:
             ConsultarReservaPeloNome(prompt('Informe o nome do responsável pela reserva:'))
             break;
-        case'6':
+        case 6:
             let hoteisProcurados = ConsultarHotelPelaCategoria(parseInt((prompt('Informe a categoria que deseja procurar:'))))
             console.log(hoteisProcurados)
             break;
-        case'7':
+        case 7:
             let = idHotel = parseInt(prompt('informe o ID do hotel:'))
             let telefone = prompt('Informe o novo número de telefone:')
             AtualizarTelefone((idHotel, telefone))
             break;
-        case'8':
+        case 8:
             continuar = false
             alert('Programa Encerrado com sucesso!')
             break;
