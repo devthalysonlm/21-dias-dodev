@@ -97,6 +97,16 @@ function ConsultarReservaPeloHotel(idHotel){
     })
 }
 
+//CONSULTANDO HOTEL PELA RESERVA
+function ConsultarHotelPelaReserva(idReserva){
+    let idHotel = reservas[idReserva-1].idHotel;
+    console.log(`Hotel:${hoteis[idHotel -1].nome}`)
+    console.log(`Endereco: ${hoteis[idHotel -1].endereco}`)
+    console.log(`Check-in:${reservas[idReserva -1].diaEntrada}`)
+    console.log(`Check-out:${reservas[idReserva -1].diaSaida}`)   
+}
+
+
 
 
 
