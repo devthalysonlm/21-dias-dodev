@@ -106,6 +106,24 @@ function ConsultarHotelPelaReserva(idReserva){
     console.log(`Check-out:${reservas[idReserva -1].diaSaida}`)   
 }
 
+//CONSULTANDO RESERVAS PELO NOME
+function ConsultarReservaPeloNome(nome){
+    for(let i = 0; i < reservas.length; i++){
+        if(nome == reservas[i].responsavel){
+            console.log(`ID reserva: ${reservas[i].nome}`)
+            console.log(`id: ${hoteis[(reservas[i].idHotel)-1].nome}`)
+        }
+    }
+}
+
+//CONSULTANDO HOTEL PELA CATEGORIA
+function ConsultarHotelPelaCategoria(categoria){
+    let hoteisProcurados = []
+    for(let i = 0; i < hoteis.length; i++){
+        
+    }
+}
+
 
 
 
