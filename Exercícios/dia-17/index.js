@@ -48,7 +48,7 @@ function CadastrarHotel(){
             alert('Nome inserido com sucesso!')
         }
     } while (!nome);
-    let categoria = prompt('Informe a categoria do Hotel:')
+    let categoria = parseInt(prompt('Informe a categoria do hotel:'))
     let endereco = prompt('Informe o endereço:')
     let telefone = parseInt(prompt('Telefone para contato:'))
     let hotel = new Hoteis(idHotel, nome, categoria, endereco, telefone,)
@@ -120,11 +120,70 @@ function ConsultarReservaPeloNome(nome){
 function ConsultarHotelPelaCategoria(categoria){
     let hoteisProcurados = []
     for(let i = 0; i < hoteis.length; i++){
-        
+        if(categoria == hoteis[i].categoria){
+            hoteisProcurados.push(hoteis[i].nome)
+
+        }
     }
+    return hoteisProcurados
+}
+
+//ATUALIZAR NUMERO DE TELEFONE
+function AtualizarTelefone(idHotel, telefone){
+    hoteis[idHotel - 1].telefone = telefone
+    console.log('Numero de Hotel atualizado com sucesso!')
+
 }
 
 
+/*
+ 1 - CADASTRO DE HOTEL
+ 2 - CADASTRO DE RESERVA
+ 3 - CONSULTAR RESERVA USANDO HOTEL
+ 4 - CONSULTAR HOTEL USANDO RESERVA
+ 5 - CONSULTAR RESERVA PELO NOME
+ 6 - CONSULTAR HOTEL PELA CATEGORIA
+ 7 - ATUALIZAR NUMERO DE TELEFONE
+ 8 - SAIR
+*/
+
+let continuar = true
+do {
+    let opcoes = parseInt(prompt('----------Bem vindo ao sistema de cadastro de hoteis e reservas Dodev----------\nEscolha a opção que melhor lhe atender:\n1 - Cadastro de hotel\n2 - Cadastro de reserva\n3 - Consulta de reservas pelo hotel\n4 - Consulta de hoteis pela reserva\n5 - Consulta de reservas pelo responsável\n6 - Consulta de hoteis pela categoria\n7 - Atualizar número de telefone\n8 - Encerrar o programa'))
+    switch(opcoes){
+        case'1':
+            CadastrarHotel();
+            break;
+        case'2':
+            CadastrarReserva();
+            break;
+        case'3':
+            ConsultarReservaPeloHotel(prompt('Informe o ID do hotel:'))
+            break;
+        case'4':
+            ConsultarHotelPelaReserva(prompt('Informe o ID da reserva:'))
+            break;
+        case'5':
+            ConsultarReservaPeloNome(prompt('Informe o nome do responsável pela reserva:'))
+            break;
+        case'6':
+            let hoteisProcurados = ConsultarHotelPelaCategoria(parseInt((prompt('Informe a categoria que deseja procurar:'))))
+            console.log(hoteisProcurados)
+            break;
+        case'7':
+            let = idHotel = parseInt(prompt('informe o ID do hotel:'))
+            let telefone = prompt('Informe o novo número de telefone:')
+            AtualizarTelefone((idHotel, telefone))
+            break;
+        case'8':
+            continuar = false
+            alert('Programa Encerrado com sucesso!')
+            break;
+        default:
+            alert('[ERRO] Opção inválida!')
+            break;
+    }
+} while (continuar);
 
 
 
