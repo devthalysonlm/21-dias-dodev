@@ -1,0 +1,72 @@
+Forma com declaração direta de propriedades (primeiro exemplo):
+
+class Hoteis {
+    constructor(id, nome, categoria, endereco, telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+}
+
+Propriedades só no constructor: As propriedades (id, nome, etc.) são criadas e inicializadas diretamente no construtor usando this.
+Mais comum e prática: Essa abordagem é amplamente utilizada em JavaScript moderno porque torna o código mais direto e funcional.
+Flexível: Se a propriedade precisa ser inicializada somente no construtor, isso evita a redundância de declará-las antes.
+Forma com declaração de propriedades fora do constructor (segundo exemplo):
+
+class Hoteis {
+    id;
+    nome;
+    categoria;
+    endereco;
+    telefone;
+    constructor(id, nome, categoria, endereco, telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+}
+
+Propriedades declaradas fora do constructor: Aqui, você está declarando as propriedades como parte da classe antes de inicializá-las no construtor.
+Maior clareza inicial: Pode ser útil para documentar a estrutura da classe, pois as propriedades ficam visíveis logo no início.
+Necessário para TypeScript: Em TypeScript, declarar as propriedades fora do construtor é obrigatório para definir tipos explícitos.
+Quando usar cada uma?
+Primeiro método (somente no constructor):
+
+Se você está apenas programando em JavaScript, é mais limpo e suficiente.
+É amplamente usado em projetos JavaScript simples e frameworks como React.
+Segundo método (propriedades separadas):
+
+Pode ser preferido para fins de documentação em projetos maiores.
+Necessário em TypeScript, onde você precisa declarar o tipo das propriedades, como:
+typescript
+Copiar código
+
+class Hoteis {
+    id: number;
+    nome: string;
+    categoria: string;
+    endereco: string;
+    telefone: string;
+    constructor(id: number, nome: string, categoria: string, endereco: string, telefone: string) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+}
+
+
+Se você não está usando TypeScript ou não tem necessidade de declarar as propriedades separadamente, a primeira forma é mais prática. 😊
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+
+Seu código está bem estruturado e organizado, mas encontrei alguns problemas e pontos de melhoria que podem ser ajustados. Vou revisar e apontar correções e explicações detalhadas para cada seção.
+
+1. Classe Hoteis e Reservas
+As classes estão corretas, mas você pode inicializar as propriedades diretamente no constructor para simplificar:
+
+
+class Hoteis {
+    constructor(id, nome, categoria, endereco, telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+}
+
+class Reservas {
+    constructor(id, idHotel, responsavel, entrada, saida) {
+        this.id = id;
+        this.idHotel = idHotel;
+        this.responsavel = responsavel;
+        this.entrada = entrada;
+        this.saida = saida;
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------
+
+2. Função CadastrarHotel
+O código funciona, mas o prompt do telefone deve verificar se é um número válido. Exemplo:
+
+let telefone;
+do {
+    telefone = prompt('Telefone para contato:');
+    if (!telefone || isNaN(telefone)) {
+        alert('Informe um número de telefone válido!');
+    }
+} while (!telefone || isNaN(telefone));
+
+
+-------------------------------------------------------------------------------------------------
+
+6. Função AtualizarTelefone
+O código está funcional, mas certifique-se de validar a entrada do telefone como um número, assim como sugerido na função CadastrarHotel.
+
+console.log no case 6: Se a categoria não encontrar nenhum hotel, exiba uma mensagem apropriada:
+
+
+if (hoteisProcurados.length === 0) {
+    console.log('Nenhum hotel encontrado para a categoria informada.');
+} else {
+    console.log(hoteisProcurados);
+}

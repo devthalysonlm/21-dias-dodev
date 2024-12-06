@@ -23,12 +23,12 @@ class Reservas{
     responsavel
     entrada
     saida
-    constructor(id, idHotel, responsavel, entrada, saida ){
+    constructor(id, idHotel, responsavel, diaEntrada, diaSaida ){
         this.id = id
         this.idHotel = idHotel
         this.responsavel = responsavel
-        this.entrada = entrada
-        this.saida = saida
+        this.diaEntrada = diaEntrada
+        this.diaSaida = diaSaida
     }
 }
 //CRIANDO ARRAY 
@@ -61,7 +61,7 @@ function CadastrarReserva(){
     let idHotel;
     let existe = false;
     do {
-        let idHotel = parseInt(prompt('Informe o ID do Hotel:'))
+         idHotel = parseInt(prompt('Informe o ID do Hotel:'))
         for(let i = 0; i < hoteis.length; i++){
             if(idHotel == hoteis[i].id){
                 existe = true;
@@ -78,7 +78,7 @@ function CadastrarReserva(){
     do {
         diaSaida = parseInt(prompt('Informe o dia check-out:'))
         if(diaSaida < diaEntrada){
-            alert(`O dia de check-in deve ser posterior ao check-out!`)
+            alert(`O dia de check-out deve ser posterior ao check-in!`)
         }
 
     } while (diaSaida < diaEntrada);
@@ -94,8 +94,8 @@ function ConsultarReservaPeloHotel(idHotel){
         if(idHotel == reserva.idHotel){
             let i = idHotel-1
             console.log(`Hotel: ${hoteis[i].nome}`)
-            console.log(`Hotel: ${hoteis[i].endereco}`)
-            console.log(`Responsável: ${reserva.nome}`)
+            console.log(`Endereço: ${hoteis[i].endereco}`)
+            console.log(`Responsável: ${reserva.responsavel}`)
             console.log(`Check-in: ${reserva.diaEntrada}`)
             console.log(`Check-out: ${reserva.diaSaida}`)
         }
@@ -105,7 +105,7 @@ function ConsultarReservaPeloHotel(idHotel){
 //CONSULTANDO HOTEL PELA RESERVA
 function ConsultarHotelPelaReserva(idReserva){
     let idHotel = reservas[idReserva-1].idHotel;
-    console.log(`Hotel:${hoteis[idHotel -1].responsavel}`)
+    console.log(`Hotel:${hoteis[idHotel -1].nome}`)
     console.log(`Endereco: ${hoteis[idHotel -1].endereco}`)
     console.log(`Check-in:${reservas[idReserva -1].diaEntrada}`)
     console.log(`Check-out:${reservas[idReserva -1].diaSaida}`)   
@@ -115,7 +115,7 @@ function ConsultarHotelPelaReserva(idReserva){
 function ConsultarReservaPeloNome(responsavel){
     for(let i = 0; i < reservas.length; i++){
         if(responsavel == reservas[i].responsavel){
-            console.log(`ID reserva: ${reservas[i].responsavel}`)
+            console.log(`ID reserva: ${reservas[i].id}`)
             console.log(`id: ${hoteis[(reservas[i].idHotel)-1].nome}`)
         }
     }
@@ -178,7 +178,7 @@ do {
         case 7:
             let = idHotel = parseInt(prompt('informe o ID do hotel:'))
             let telefone = prompt('Informe o novo número de telefone:')
-            AtualizarTelefone((idHotel, telefone))
+            AtualizarTelefone(idHotel, telefone)
             break;
         case 8:
             continuar = false
