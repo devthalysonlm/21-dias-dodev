@@ -112,10 +112,10 @@ function ConsultarHotelPelaReserva(idReserva){
 }
 
 //CONSULTANDO RESERVAS PELO NOME
-function ConsultarReservaPeloNome(nome){
+function ConsultarReservaPeloNome(responsavel){
     for(let i = 0; i < reservas.length; i++){
-        if(nome == reservas[i].responsavel){
-            console.log(`ID reserva: ${reservas[i].nome}`)
+        if(responsavel == reservas[i].responsavel){
+            console.log(`ID reserva: ${reservas[i].responsavel}`)
             console.log(`id: ${hoteis[(reservas[i].idHotel)-1].nome}`)
         }
     }
