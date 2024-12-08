@@ -63,7 +63,7 @@ class Biblioteca{
     DevolverLivro(titulo){
        livros.forEach((livro) =>{
         if(livro.titulo == titulo){
-            disponibilidade = true
+            livro.disponibilidade = true
             console.log(`Livro devolvido!`)
         }
        })
@@ -74,9 +74,9 @@ class Biblioteca{
 
 //CRIANDO OBJETO DE BIBLIOTECA
 
-let biblioteca = new Biblioteca(`Biblioteca Dodev`, `Rua 3000,480`, `33631094`)
+let biblioteca = new Biblioteca(`Biblioteca Dodev`, `Rua 3000,480`, `33631094`,livros)
 
-biblioteca.BuscarLivroPeloTitulo(`Livro3`)
+biblioteca.BuscarLivroPeloTitulo(`Livro2`)
 biblioteca.EmprestarLivros(`Livro1`)
 biblioteca.DevolverLivro(`Livro1`)
 
