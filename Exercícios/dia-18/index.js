@@ -64,7 +64,7 @@ class Biblioteca{
        livros.forEach((livro) =>{
         if(livro.titulo == titulo){
             livro.disponibilidade = true
-            console.log(`Livro devolvido!`)
+            console.log(`Livro: ${livro.titulo} devolvido!`)
         }
        })
 
