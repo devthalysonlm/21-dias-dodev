@@ -1,69 +1,63 @@
 //CRIANDO A CLASSE LIVROS
 
-class Livros{
-    constructor(titulo, autor, editora, anoPublicacao, disponibilidade = true){
-        this.titulo = titulo
-        this.autor = autor
-        this.editora = editora
-        this.anoPublicacao = anoPublicacao
-        this.disponibilidade = disponibilidade
+class Livros {
+    constructor(titulo, autor, editora, anoPublicacao, disponibilidade = true) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.anoPublicacao = anoPublicacao;
+        this.disponibilidade = disponibilidade;
     }
 }
 
 let livros = [];
-livros.push(new Livros(`livro1`, `Rhony`, `Curitiba`,1994))
-livros.push(new Livros(`Livro2`, `Jhonatan`, `Nordeste`, 1990))
-livros.push(new Livros(`Livro3`, `Bruno`, `Balneário Camboriú`, 1999))
-livros.push(new Livros(`Livro4`, `Jonas`, `Para`, 1990))
-livros.push(new Livros(`Livro5`, `Thalyson`, `Balneário Camboriú`, 1999))
+livros.push(new Livros("livro1", "Rhony", "Curitiba", 1994));
+livros.push(new Livros("Livro2", "Jhonatan", "Nordeste", 1990));
+livros.push(new Livros("Livro3", "Bruno", "Balneário Camboriú", 1999));
+livros.push(new Livros("Livro4", "Jonas", "Para", 1990));
+livros.push(new Livros("Livro5", "Thalyson", "Balneário Camboriú", 1999));
 
-
-class Biblioteca{
-    constructor(nome, endereco, telefone, acervoLivros = []){
-        this.nome = nome
-        this.endereco = endereco
-        this.telefone = telefone
-        this.acervoLivros = acervoLivros
+class Biblioteca {
+    constructor(nome, endereco, telefone, acervoLivros = []) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.acervoLivros = acervoLivros;
     }
 
-    BuscarLivros(titulo){
+    BuscarLivros(titulo) {
         this.acervoLivros.forEach(livro => {
-            if(livro.titulo === titulo){
-                console.log(livro)
+            if (livro.titulo === titulo) {
+                console.log(livro);
             }
-        })
+        });
     }
 
-    EmprestarLivros(titulo){
-        let emprestar = false
+    EmprestarLivros(titulo) {
+        let emprestar = false;
         this.acervoLivros.forEach(livro => {
-            if(livro.titulo === titulo){
-                if(livro.disponibilidade === true){
-                    livro.disponibilidade = false
-                    emprestar = true
+            if (livro.titulo === titulo) {
+                if (livro.disponibilidade === true) {
+                    livro.disponibilidade = false;
+                    emprestar = true;
                 }
             }
-        })
-        return emprestar
+        });
+        return emprestar;
     }
 
-    DevolverLivros(titulo){
+    DevolverLivros(titulo) {
         this.acervoLivros.forEach(livro => {
-            if(livro.titulo === titulo){
-                livro.disponibilidade = true
-                console.log(`Livro ${livro.titulo} devolvido com sucesso!`)
+            if (livro.titulo === titulo) {
+                livro.disponibilidade = true;
+                console.log(`Livro ${livro.titulo} devolvido com sucesso!`);
             }
-        })
+        });
     }
 }
 
-let biblioteca = new Biblioteca(`Biblioteca Dodev`, `Rua 3000,480`, `33631094`, livros)
+let biblioteca = new Biblioteca("Biblioteca Dodev", "Rua 3000,480", "33631094", livros);
 
-biblioteca.BuscarLivros(`Livro1`)
-biblioteca.EmprestarLivros(`Livro3`)
-biblioteca.DevolverLivros(`Livro3`)
-
-
-
-
-
+biblioteca.BuscarLivros("Livro1");
+biblioteca.EmprestarLivros("Livro3");
+biblioteca.DevolverLivros("Livro3");
