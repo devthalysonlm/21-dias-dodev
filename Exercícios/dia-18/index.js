@@ -1,83 +1,68 @@
-//CRIANDO  CLASSE DE LIVROS
+//CRIANDO A CLASSE LIVROS
+
 class Livros{
-    titulo
-    autor
-    editora
-    anoDePublicacao
-    disponibilidade = true
-    constructor(titulo, autor, editora, anoDePublicacao,){
+    constructor(titulo, autor, editora, anoPublicacao, disponibilidade = true){
         this.titulo = titulo
         this.autor = autor
         this.editora = editora
-        this.anoDePublicacao = anoDePublicacao
-        
+        this.anoPublicacao = anoPublicacao
+        this.disponibilidade = disponibilidade
     }
 }
 
-//CRIANDO OBJETOS DA CLASSE DE LIVROS
-let livros = []
-livros.push(new Livros(`Livro1`, `Navera`,`Editora A`, 1999))
-livros.push(new Livros(`Livro2`, `EuNaPlay`, `Editora B`, 1992))
-livros.push(new Livros(`Livro3`, `CalveludoGamer`, `Editora C`, 1995))
-livros.push(new Livros(`Livro4`, `TiãoDoido`, `Editora D`,1990 ))
-livros.push(new Livros(`Livro5`, `Rhonyzeera`, `Editora E`, 1986))
-livros.push(new Livros(`Livro6`, `JucaBala`, `Editora F`, 1990))
+let livros = [];
+livros.push(`livro1`, `Rhony`, `Curitiba`,1994)
+livros.push(`Livro2`, `Jhonatan`, `Nordeste`, 1990)
+livros.push(`Livro3`, `Bruno`, `Balneário Camboriú`, 1999)
+livros.push(`Livro4`, `Jonas`, `Para`, 1990)
+livros.push(`Livro5`, `Thalyson`, `Balneário Camboriú`, 1999)
 
-//CRIANDO A CLASSE BIBLIOTECA
 class Biblioteca{
-    nome
-    endereco
-    telefone
-    acervoDeLivros = []
-    constructor(nome, endereco, telefone, acervo){
+    constructor(nome, endereco, telefone, acervoLivros = []){
         this.nome = nome
         this.endereco = endereco
         this.telefone = telefone
-        this.acervoDeLivros = acervo
+        this.acervoLivros = acervoLivros
     }
-    //METODO PARA BUSCAR UM LIVRO ESPECÍFICO
-    BuscarLivroPeloTitulo(titulo){
-        this.acervoDeLivros.forEach((livro) =>{
+
+    BuscarLivros(titulo){
+        this.acervoLivros.forEach(livro => {
             if(livro.titulo === titulo){
                 console.log(livro)
             }
         })
     }
 
-    //METODO PARA EMPRESTAR LIVRO
     EmprestarLivros(titulo){
         let emprestar = false
-        this.acervoDeLivros.forEach((livro) =>{
+        this.acervoLivros.forEach(livro => {
             if(livro.titulo === titulo){
                 if(livro.disponibilidade === true){
                     livro.disponibilidade = false
                     emprestar = true
                 }
-
             }
         })
         return emprestar
-
-    }
-    //METODO PARA DEVOLVER LIVRO
-    DevolverLivro(titulo){
-       livros.forEach((livro) =>{
-        if(livro.titulo == titulo){
-            livro.disponibilidade = true
-            console.log(`Livro: ${livro.titulo} devolvido!`)
-        }
-       })
-
     }
 
+    DevolverLivros(titulo){
+        this.acervoLivros.forEach(livro => {
+            if(livro.titulo === titulo){
+                livro.disponibilidade = true
+                console.log(`Livro devolvido com sucesso!`)
+            }
+        })
+    }
 }
 
-//CRIANDO OBJETO DE BIBLIOTECA
+let biblioteca = new Biblioteca(`Biblioteca Dodev`, `Rua 3000,480`, `33631094`, livros)
 
-let biblioteca = new Biblioteca(`Biblioteca Dodev`, `Rua 3000,480`, `33631094`,livros)
+biblioteca.BuscarLivros(`Livro1`)
+biblioteca.EmprestarLivros(`Livro3`)
+biblioteca.DevolverLivros(`Livro3`)
 
-biblioteca.BuscarLivroPeloTitulo(`Livro2`)
-biblioteca.EmprestarLivros(`Livro1`)
-biblioteca.DevolverLivro(`Livro1`)
+
+
 
 
