@@ -11,11 +11,12 @@ class Livros{
 }
 
 let livros = [];
-livros.push(`livro1`, `Rhony`, `Curitiba`,1994)
-livros.push(`Livro2`, `Jhonatan`, `Nordeste`, 1990)
-livros.push(`Livro3`, `Bruno`, `Balneário Camboriú`, 1999)
-livros.push(`Livro4`, `Jonas`, `Para`, 1990)
-livros.push(`Livro5`, `Thalyson`, `Balneário Camboriú`, 1999)
+livros.push(new Livros(`livro1`, `Rhony`, `Curitiba`,1994))
+livros.push(new Livros(`Livro2`, `Jhonatan`, `Nordeste`, 1990))
+livros.push(new Livros(`Livro3`, `Bruno`, `Balneário Camboriú`, 1999))
+livros.push(new Livros(`Livro4`, `Jonas`, `Para`, 1990))
+livros.push(new Livros(`Livro5`, `Thalyson`, `Balneário Camboriú`, 1999))
+
 
 class Biblioteca{
     constructor(nome, endereco, telefone, acervoLivros = []){
@@ -50,7 +51,7 @@ class Biblioteca{
         this.acervoLivros.forEach(livro => {
             if(livro.titulo === titulo){
                 livro.disponibilidade = true
-                console.log(`Livro devolvido com sucesso!`)
+                console.log(`Livro ${livro.titulo} devolvido com sucesso!`)
             }
         })
     }
